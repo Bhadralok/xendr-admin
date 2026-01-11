@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-grey: #707070;
+  --color-secondary-grey: #ababab;
+  --color-tertiary-grey: #f8f8f8;
+  --color-primary-black: #190f00;
+
+  --color-primary-orange: #e28400;
+  --color-tertiary-orange: #fff2df;
+}
+.loader {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.remove-scrollbar {
+  @apply [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none;
+}
