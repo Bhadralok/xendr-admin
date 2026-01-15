@@ -7,16 +7,19 @@ import { FaRedo } from "react-icons/fa";
 import { MdOutlineContentCopy } from "react-icons/md";
 import copy from "../assets/copy.svg";
 import cancel from "../assets/cancel.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login({ onClick }) {
   const [isLoading, setIsLoading] = useState(false);
   const [counter, setCounter] = useState(30);
   const [resend, setResend] = useState(false);
 
+  const navigate = useNavigate();
   const handleLoading = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
+      navigate("/reset-password");
     }, 2000);
   };
 

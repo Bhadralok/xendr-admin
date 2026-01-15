@@ -1,18 +1,21 @@
 import { useState } from "react";
 import CustomButton from "../UI/CustomButton.jsx";
 import CustomInput from "../UI/CustomInput";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleLoading = () => {
     console.log(email, password);
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
+      navigate("/dashboard");
     }, 2000);
   };
 

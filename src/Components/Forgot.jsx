@@ -3,12 +3,13 @@ import CustomButton from "../UI/CustomButton.jsx";
 import CustomInput from "../UI/CustomInput";
 import { IoChevronBackSharp } from "react-icons/io5";
 import OTPInput from "../UI/OTPInput.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login({ onClick }) {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const navigate = useNavigate();
   const handleLoading = () => {
     setIsLoading(true);
     setTimeout(() => {

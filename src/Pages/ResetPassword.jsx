@@ -3,18 +3,20 @@ import CustomButton from "../UI/CustomButton.jsx";
 import CustomInput from "../UI/CustomInput";
 import { IoChevronBackSharp } from "react-icons/io5";
 import OTPInput from "../UI/OTPInput.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import cancel from "../assets/cancel.svg";
 
 export default function Login({ onClick }) {
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleLoading = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
+      navigate("/");
     }, 2000);
     onClick();
   };
