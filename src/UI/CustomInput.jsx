@@ -1,10 +1,12 @@
 import { useRef, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { IoSearch } from "react-icons/io5";
 
 export default function CustomInput({
   type = "text",
   placeholder = "",
   value,
+  isSearch = false,
   onChange,
 }) {
   const [show, setShow] = useState(false);
@@ -28,9 +30,13 @@ export default function CustomInput({
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
-        className="bg-tertiary-grey w-full px-4 py-5 transition-all duration-200 placeholder:text-secondary-grey text-primary-black font-medium rounded-2xl outline-none border-none focus:outline-none"
+        className={`${
+          isSearch && "px-13"
+        } bg-tertiary-grey w-full relative px-4 py-5 transition-all duration-200 placeholder:text-secondary-grey text-primary-black font-medium rounded-2xl outline-none border-none focus:outline-none`}
       />
-
+      <div className="absolute top-[35%] left-4">
+        {isSearch && <IoSearch size={22} color="#707070" />}
+      </div>
       {type === "password" && (
         <div
           onClick={handleShow}

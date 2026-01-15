@@ -1,123 +1,14 @@
 import { Outlet } from "react-router-dom";
-import NavButtons from "../UI/NavButtons";
-import homeactive from "../assets/homeactive.svg";
-import homeinactive from "../assets/homeinactive.svg";
-import eclipseactive from "../assets/eclipseactive.svg";
-import eclipseinactive from "../assets/eclipseinactive.svg";
-import helmetactive from "../assets/helmetactive.svg";
-import helmetinactive from "../assets/helmetinactive.svg";
-import useractive from "../assets/useractive.svg";
-import userinactive from "../assets/userinactive.svg";
-import chartactive from "../assets/chartactive.svg";
-import chartinactive from "../assets/chartinactive.svg";
-import emergencyactive from "../assets/emergencyactive.svg";
-import emergencyinactive from "../assets/emergencyinactive.svg";
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import collapseactive from "../assets/collapseactive.svg";
-import collapseinactive from "../assets/collapseinactive.svg";
-import favicon from "../assets/favicon.svg";
-import swift from "../assets/swifthori.svg";
-import CustomInput from "../UI/CustomInput";
+import Header from "../Components/Header";
 
 export default function DashboardLayout() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const collapsed =
-    "h-15 w-15 rounded-2xl flex items-center justify-center cursor-pointer";
-  const notCollapsed =
-    "h-15 rounded-2xl flex items-center justify-start cursor-pointer w-full pr-20 pl-5 gap-4 bg-tertiary-orange";
-
   return (
     <>
-      <div className="flex h-screen">
-        <div className="w-fit px-5 pt-8 shadow-xl h-full">
-          <header className="flex flex-col gap-3 ">
-            {isCollapsed ? (
-              <div className="pb-11 pl-3.5">
-                <img src={favicon} alt="" className="size-8" />
-              </div>
-            ) : (
-              <div className="w-full pl-3.5 pb-11">
-                <img src={swift} alt="" className="w-40" />
-              </div>
-            )}
-            {data.map((item) => (
-              <NavLink to={item.to} end={item.end} key={item.id}>
-                {({ isActive }) => (
-                  <NavButtons
-                    imageInactive={item.imageInactive}
-                    imageActive={item.imageActive}
-                    isActive={isActive}
-                    isCollapsed={isCollapsed}
-                    navtext={item.navtext}
-                  />
-                )}
-              </NavLink>
-            ))}
-            <button
-              className={isCollapsed ? collapsed : notCollapsed}
-              onClick={() => setIsCollapsed(!isCollapsed)}
-            >
-              <img
-                src={isCollapsed ? collapseinactive : collapseactive}
-                alt=""
-              />
-              {!isCollapsed && <p>Collapse</p>}
-            </button>
-          </header>
-        </div>
-        <div className="pt-8 w-full px-5">
-          <CustomInput placeholder="search" />
-        </div>
+      <div className="h-screen">
+        <Header />
       </div>
 
       <Outlet />
     </>
   );
 }
-
-const data = [
-  {
-    id: 1,
-    imageActive: homeactive,
-    imageInactive: homeinactive,
-    to: "/dashboard",
-    navtext: "Overview",
-    end: true,
-  },
-  {
-    id: 2,
-    imageActive: eclipseactive,
-    imageInactive: eclipseinactive,
-    navtext: "Xends",
-    to: "/dashboard/eclipse",
-  },
-  {
-    id: 3,
-    imageActive: helmetactive,
-    imageInactive: helmetinactive,
-    navtext: "Riders",
-    to: "/dashboard/registered-riders",
-  },
-  {
-    id: 4,
-    imageActive: useractive,
-    imageInactive: userinactive,
-    navtext: "Users",
-    to: "/dashboard/user",
-  },
-  {
-    id: 5,
-    imageActive: chartactive,
-    imageInactive: chartinactive,
-    navtext: "Finance",
-    to: "/dashboard/chart",
-  },
-  {
-    id: 6,
-    imageActive: emergencyactive,
-    imageInactive: emergencyinactive,
-    navtext: "Emergency",
-    to: "/dashboard/emergency",
-  },
-];
