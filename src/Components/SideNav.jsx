@@ -17,6 +17,7 @@ import collapseactive from "../assets/collapseactive.svg";
 import collapseinactive from "../assets/collapseinactive.svg";
 import favicon from "../assets/favicon.svg";
 import swift from "../assets/swifthori.svg";
+import signout from "../assets/signout.svg";
 
 export default function SideNav() {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -26,7 +27,7 @@ export default function SideNav() {
     "h-15 rounded-2xl flex items-center justify-start cursor-pointer w-full pr-20 pl-5 gap-4 bg-tertiary-orange";
   return (
     <div>
-      <div className="w-fit px-5 pt-8 shadow-[0px_10px_50px_0px_rgba(0,0,0,0.05)] h-full">
+      <div className="w-fit flex flex-col pb-10 justify-between px-5 pt-8 shadow-[0px_10px_50px_0px_rgba(0,0,0,0.05)] h-full">
         <header className="flex flex-col gap-3 ">
           {isCollapsed ? (
             <div className="pb-11 pl-3.5">
@@ -58,6 +59,36 @@ export default function SideNav() {
             {!isCollapsed && <p>Collapse</p>}
           </button>
         </header>
+        <div className="flex flex-col gap-5 justify-center ">
+          <div
+            className={`${
+              isCollapsed
+                ? " justify-center w-15"
+                : "w-full pl-5 transition-all duration-300  justify-start"
+            } flex items-center gap-4 h-15`}
+          >
+            <button className="h-6 w-6 cursor-pointer bg-[#E5E5E5] text-primary-grey flex items-center justify-center font-black rounded text-[11px]">
+              B
+            </button>
+            {!isCollapsed && (
+              <p className="text-primary-grey font-medium text-sm">Account</p>
+            )}
+          </div>
+          <div
+            className={`${
+              isCollapsed
+                ? " justify-center w-15"
+                : "w-full pl-5 transition-all duration-300  justify-start"
+            } flex items-center gap-4 h-15`}
+          >
+            <button className="cursor-pointer">
+              <img src={signout} alt="" />
+            </button>
+            {!isCollapsed && (
+              <p className="text-red-500 font-medium text-sm">Logout</p>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -16,10 +16,11 @@ export default function DashboardLayout() {
             <TopHeader />
             <div className="mx-4">
               <Outlet />
-              something
             </div>
           </div>
-          <Footer />
+          <div className="mx-4">
+            <Footer />
+          </div>
         </div>
       </div>
     </>
