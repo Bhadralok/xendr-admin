@@ -1,14 +1,29 @@
+import NavButtons from "../UI/NavButtons";
+
+import CustomInput from "../UI/CustomInput";
 import { Outlet } from "react-router-dom";
-import Header from "../Components/Header";
+import Footer from "../Components/Footer";
+import SideNav from "../Components/SideNav";
+import TopHeader from "../Components/TopHeader";
 
 export default function DashboardLayout() {
   return (
     <>
-      <div className="h-screen">
-        <Header />
+      <div className=" flex h-screen ">
+        <SideNav />
+        <div className="flex flex-col w-full justify-between">
+          <div>
+            <TopHeader />
+            <div className="mx-4">
+              <Outlet />
+              something
+            </div>
+          </div>
+          <Footer />
+        </div>
       </div>
-
-      <Outlet />
     </>
   );
 }
+
+// Data for each navigation

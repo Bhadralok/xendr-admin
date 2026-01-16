@@ -24,3 +24,6 @@
 .remove-scrollbar {
   @apply [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none;
 }
+.shadow-bg {
+  @apply shadow-[0px_10px_50px_0px_rgba(0,0,0,0.05)];
+}

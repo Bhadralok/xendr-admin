@@ -14,6 +14,7 @@ import Dashboard from "./Pages/Dashboard";
 import DashboardLayout from "./Layout/DashboardLayout";
 import User from "./Pages/User";
 import RegisteredRiders from "./Pages/RegisteredRiders";
+import PageNotFound from "./Pages/PageNotFound";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -31,11 +32,11 @@ export default function App() {
           <Route path="/dashboard/user" element={<User />} />
           <Route
             path="/dashboard/registered-riders"
-            element={<RegisteredRiders   />}
+            element={<RegisteredRiders />}
           />
         </Route>
 
-        <Route path="*" element={<Page404 />} />
+        <Route path="*" element={<PageNotFound />} />
       </>
     )
   );
