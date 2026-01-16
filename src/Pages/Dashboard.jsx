@@ -1,22 +1,32 @@
-// import NavButtons from "../UI/NavButtons";
-// import homeactive from "../assets/homeactive.svg";
-// import homeinactive from "../assets/homeinactive.svg";
-// import eclipseactive from "../assets/eclipseactive.svg";
-// import eclipseinactive from "../assets/eclipseinactive.svg";
-// import helmetactive from "../assets/helmetactive.svg";
-// import helmetinactive from "../assets/helmetinactive.svg";
-// import useractive from "../assets/useractive.svg";
-// import userinactive from "../assets/userinactive.svg";
-// import chartactive from "../assets/chartactive.svg";
-// import chartinactive from "../assets/chartinactive.svg";
-// import emergencyactive from "../assets/emergencyactive.svg";
-// import emergencyinactive from "../assets/emergencyinactive.svg";
-// import { NavLink } from "react-router-dom";
-
+import DashboardCard from "../Components/DashboardCard";
+import helmet from "../assets/helmet.svg";
 export default function Dashboard() {
   return (
-    <div>
-      {/* <p>something</p> */}
+    <div className="flex w-fit gap-4 ">
+      <div className="w-[20vw] flex flex-col gap-4">
+        <div className="h-62.5 flex gap-4 bg-amber-100 w-full">
+          <DashboardCard percentage="0" />
+          <DashboardCard percentage="0" />
+        </div>
+        <div className="w-full gap-4 ">
+          <DashboardCard
+            isHorizontal={true}
+            icon={helmet}
+            title="Total Xend Requests"
+            value="0"
+            percentage="0"
+          />
+          <DashboardCard
+            isHorizontal={true}
+            icon={helmet}
+            title="Riders Online"
+            value="0"
+          />
+        </div>
+      </div>
+      <div className="w-[80vw] bg-red-500">
+        <h1>something</h1>
+      </div>
     </div>
   );
 }
