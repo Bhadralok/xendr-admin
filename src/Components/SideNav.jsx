@@ -79,7 +79,7 @@ export default function SideNav() {
             className={`${
               collapsed
                 ? " justify-center w-15"
-                : "w-full pl-5 transition-all duration-300  justify-start"
+                : "w-full pl-6 transition-all duration-300  justify-start"
             } flex items-center gap-4 h-15`}
           >
             <button className="cursor-pointer">

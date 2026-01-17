@@ -16,7 +16,7 @@ export default function DashboardLayout() {
         <SideNav />
         <div
           className={`${
-            collapsed ? "w-full" : "w-[85.5vw]"
+            collapsed ? "w-full" : "w-[88.5vw]"
           } flex ml-25  flex-col justify-between`}
         >
           <div>
