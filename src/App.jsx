@@ -17,6 +17,7 @@ import RegisteredRiders from "./Pages/RegisteredRiders";
 import PageNotFound from "./Pages/PageNotFound";
 import Activity from "./Pages/Activity";
 import Finance from "./Pages/Finance";
+import Emergency from "./Pages/Emergency";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/dashboard/user" element={<User />} />
           <Route path="/dashboard/activity" element={<Activity />} />
           <Route path="/dashboard/finance" element={<Finance />} />
+          <Route path="/dashboard/emergency" element={<Emergency />} />
           <Route
             path="/dashboard/registered-riders"
             element={<RegisteredRiders />}
