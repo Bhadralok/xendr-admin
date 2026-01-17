@@ -1,5 +1,6 @@
 import live from "../assets/live.svg";
 import LiveDataButton from "../UI/LiveDataButton";
+import Dropdown from "./Dropdown";
 
 export default function ActivityCard({
   data,
@@ -36,7 +37,7 @@ export default function ActivityCard({
           <p className="text">{description}</p>
         </div>
         <div className="flex items-center gap-4">
-          {isDropdown && <div>Something</div>}
+          {isDropdown && <Dropdown />}
           {isButton && (
             <div className="w-fit">
               <LiveDataButton
