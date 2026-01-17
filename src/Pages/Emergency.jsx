@@ -11,6 +11,7 @@ export default function Emergency() {
         dataDescription="When any user or rider triggers emergency mode, the information will appear here"
         isDropdown={true}
         isButton={false}
+        // data={true}
       />
     </div>
   );

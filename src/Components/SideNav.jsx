@@ -63,7 +63,7 @@ export default function SideNav() {
         <div className="flex flex-col gap-5 justify-center ">
           <div
             className={`${
-              collapse
+              collapsed
                 ? " justify-center w-15"
                 : "w-full pl-5 transition-all duration-300  justify-start"
             } flex items-center gap-4 h-15`}
@@ -71,13 +71,13 @@ export default function SideNav() {
             <button className="h-6 w-6 cursor-pointer bg-[#E5E5E5] text-primary-grey flex items-center justify-center font-black rounded text-[11px]">
               B
             </button>
-            {!collapse && (
+            {!collapsed && (
               <p className="text-primary-grey font-medium text-sm">Account</p>
             )}
           </div>
           <div
             className={`${
-              collapse
+              collapsed
                 ? " justify-center w-15"
                 : "w-full pl-5 transition-all duration-300  justify-start"
             } flex items-center gap-4 h-15`}
@@ -85,7 +85,7 @@ export default function SideNav() {
             <button className="cursor-pointer">
               <img src={signout} alt="" />
             </button>
-            {!collapse && (
+            {!collapsed && (
               <p className="text-red-500 font-medium text-sm">Logout</p>
             )}
           </div>
