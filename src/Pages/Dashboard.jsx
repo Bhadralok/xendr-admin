@@ -3,11 +3,14 @@ import DashboardCard from "../Components/DashboardCard";
 import helmet from "../assets/helmet.svg";
 import paperxend from "../assets/paperxend.svg";
 import activity from "../assets/activityicon.svg";
+import { useContext } from "react";
+import { CollapseContext } from "../Context/CollapsedContext";
 
 export default function Dashboard() {
+  const { collapsed } = useContext(CollapseContext);
   return (
-    <>
-      <div className="flex h-full w-full gap-4 ">
+    <div className={`${collapsed ? "w-full" : "w-[84vw]"} `}>
+      <div className="flex h-full gap-4 ">
         <div className=" flex flex-col gap-4">
           <div className="h-62.5 flex gap-4">
             <DashboardCard
@@ -46,6 +49,6 @@ export default function Dashboard() {
       <div className=" mt-4">
         <ActivityCard isDropdown={true} isButton={false} icon={activity} />
       </div>
-    </>
+    </div>
   );
 }
