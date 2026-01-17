@@ -9,16 +9,16 @@ import TopHeader from "../Components/TopHeader";
 export default function DashboardLayout() {
   return (
     <>
-      <div className=" flex h-screen ">
+      <div className="flex h-screen  ">
         <SideNav />
-        <div className="flex flex-col w-full justify-between">
+        <div className="flex ml-25 flex-col w-full justify-between">
           <div>
             <TopHeader />
-            <div className="mx-4">
+            <div className="mx-4 mt-4">
               <Outlet />
             </div>
           </div>
-          <div className="mx-4">
+          <div className="mx-4 mt-4">
             <Footer />
           </div>
         </div>

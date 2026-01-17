@@ -27,3 +27,6 @@
 .shadow-bg {
   @apply shadow-[0px_10px_50px_0px_rgba(0,0,0,0.05)];
 }
+.text {
+  @apply text-primary-grey font-medium text-sm;
+}

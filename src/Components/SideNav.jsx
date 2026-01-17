@@ -26,8 +26,8 @@ export default function SideNav() {
   const notCollapsed =
     "h-15 rounded-2xl flex items-center justify-start cursor-pointer w-full pr-20 pl-5 gap-4 bg-tertiary-orange";
   return (
-    <div>
-      <div className="w-fit flex flex-col pb-10 justify-between px-5 pt-8 shadow-[0px_10px_50px_0px_rgba(0,0,0,0.05)] h-full">
+    <div className="fixed">
+      <div className="w-fit flex flex-col pb-10 justify-between px-5 pt-8 shadow-[0px_10px_50px_0px_rgba(0,0,0,0.05)] h-screen">
         <header className="flex flex-col gap-3 ">
           {isCollapsed ? (
             <div className="pb-11 pl-3.5">

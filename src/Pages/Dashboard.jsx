@@ -1,32 +1,51 @@
+import ActivityCard from "../Components/ActivityCard";
 import DashboardCard from "../Components/DashboardCard";
 import helmet from "../assets/helmet.svg";
+import paperxend from "../assets/paperxend.svg";
+import activity from "../assets/activityicon.svg";
+
 export default function Dashboard() {
   return (
-    <div className="flex w-fit gap-4 ">
-      <div className="w-[20vw] flex flex-col gap-4">
-        <div className="h-62.5 flex gap-4 bg-amber-100 w-full">
-          <DashboardCard percentage="0" />
-          <DashboardCard percentage="0" />
+    <>
+      <div className="flex h-full w-full gap-4 ">
+        <div className=" flex flex-col gap-4">
+          <div className="h-62.5 flex gap-4">
+            <DashboardCard
+              icon={helmet}
+              title="Total Xend Requests"
+              value="0"
+              percentage="0"
+            />
+            <DashboardCard
+              icon={helmet}
+              title="Total Xend Requests"
+              value="0"
+              percentage="0"
+            />
+          </div>
+          <div className="w-full gap-4 ">
+            <DashboardCard
+              isHorizontal={true}
+              icon={helmet}
+              title="Total Xend Requests"
+              value="0"
+              percentage="0"
+            />
+            <DashboardCard
+              isHorizontal={true}
+              icon={helmet}
+              title="Riders Online"
+              value="0"
+            />
+          </div>
         </div>
-        <div className="w-full gap-4 ">
-          <DashboardCard
-            isHorizontal={true}
-            icon={helmet}
-            title="Total Xend Requests"
-            value="0"
-            percentage="0"
-          />
-          <DashboardCard
-            isHorizontal={true}
-            icon={helmet}
-            title="Riders Online"
-            value="0"
-          />
+        <div className="w-[68.8vw]">
+          <ActivityCard icon={paperxend} />
         </div>
       </div>
-      <div className="w-[80vw] bg-red-500">
-        <h1>something</h1>
+      <div className=" mt-4">
+        <ActivityCard isDropdown={true} icon={activity} />
       </div>
-    </div>
+    </>
   );
 }
