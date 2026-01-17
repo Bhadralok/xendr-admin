@@ -5,13 +5,20 @@ import { Outlet } from "react-router-dom";
 import Footer from "../Components/Footer";
 import SideNav from "../Components/SideNav";
 import TopHeader from "../Components/TopHeader";
+import { useContext } from "react";
+import { CollapseContext } from "../Context/CollapsedContext";
 
 export default function DashboardLayout() {
+  const { collapsed } = useContext(CollapseContext);
   return (
     <>
-      <div className="flex h-screen  ">
+      <div className="flex h-screen ">
         <SideNav />
-        <div className="flex ml-25 flex-col w-full justify-between">
+        <div
+          className={`${
+            collapsed ? "w-full" : "w-[85.5vw]"
+          } flex ml-25  flex-col justify-between`}
+        >
           <div>
             <TopHeader />
             <div className="mx-4 mt-4">

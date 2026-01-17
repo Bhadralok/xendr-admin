@@ -15,6 +15,8 @@ import DashboardLayout from "./Layout/DashboardLayout";
 import User from "./Pages/User";
 import RegisteredRiders from "./Pages/RegisteredRiders";
 import PageNotFound from "./Pages/PageNotFound";
+import Activity from "./Pages/Activity";
+import Finance from "./Pages/Finance";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -30,6 +32,8 @@ export default function App() {
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="/dashboard/user" element={<User />} />
+          <Route path="/dashboard/activity" element={<Activity />} />
+          <Route path="/dashboard/finance" element={<Finance />} />
           <Route
             path="/dashboard/registered-riders"
             element={<RegisteredRiders />}

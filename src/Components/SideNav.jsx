@@ -12,24 +12,25 @@ import chartinactive from "../assets/chartinactive.svg";
 import emergencyactive from "../assets/emergencyactive.svg";
 import emergencyinactive from "../assets/emergencyinactive.svg";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import collapseactive from "../assets/collapseactive.svg";
 import collapseinactive from "../assets/collapseinactive.svg";
 import favicon from "../assets/favicon.svg";
 import swift from "../assets/swifthori.svg";
 import signout from "../assets/signout.svg";
+import { CollapseContext } from "../Context/CollapsedContext";
 
 export default function SideNav() {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-  const collapsed =
+  const { collapsed, toggle } = useContext(CollapseContext);
+  const collapse =
     "h-15 w-15 rounded-2xl flex items-center justify-center cursor-pointer";
   const notCollapsed =
     "h-15 rounded-2xl flex items-center justify-start cursor-pointer w-full pr-20 pl-5 gap-4 bg-tertiary-orange";
   return (
-    <div className="fixed">
-      <div className="w-fit flex flex-col pb-10 justify-between px-5 pt-8 shadow-[0px_10px_50px_0px_rgba(0,0,0,0.05)] h-screen">
+    <div className={collapsed ? "" : "pr-39"}>
+      <div className=" fixed w-fit flex flex-col pb-10 justify-between px-5 pt-8 shadow-[0px_10px_50px_0px_rgba(0,0,0,0.05)] h-screen">
         <header className="flex flex-col gap-3 ">
-          {isCollapsed ? (
+          {collapsed ? (
             <div className="pb-11 pl-3.5">
               <img src={favicon} alt="" className="size-8" />
             </div>
@@ -45,24 +46,24 @@ export default function SideNav() {
                   imageInactive={item.imageInactive}
                   imageActive={item.imageActive}
                   isActive={isActive}
-                  isCollapsed={isCollapsed}
+                  isCollapsed={collapsed}
                   navtext={item.navtext}
                 />
               )}
             </NavLink>
           ))}
           <button
-            className={isCollapsed ? collapsed : notCollapsed}
-            onClick={() => setIsCollapsed(!isCollapsed)}
+            className={collapsed ? collapse : notCollapsed}
+            onClick={() => toggle(!collapse)}
           >
-            <img src={isCollapsed ? collapseinactive : collapseactive} alt="" />
-            {!isCollapsed && <p>Collapse</p>}
+            <img src={collapsed ? collapseinactive : collapseactive} alt="" />
+            {!collapsed && <p>Collapse</p>}
           </button>
         </header>
         <div className="flex flex-col gap-5 justify-center ">
           <div
             className={`${
-              isCollapsed
+              collapse
                 ? " justify-center w-15"
                 : "w-full pl-5 transition-all duration-300  justify-start"
             } flex items-center gap-4 h-15`}
@@ -70,13 +71,13 @@ export default function SideNav() {
             <button className="h-6 w-6 cursor-pointer bg-[#E5E5E5] text-primary-grey flex items-center justify-center font-black rounded text-[11px]">
               B
             </button>
-            {!isCollapsed && (
+            {!collapse && (
               <p className="text-primary-grey font-medium text-sm">Account</p>
             )}
           </div>
           <div
             className={`${
-              isCollapsed
+              collapse
                 ? " justify-center w-15"
                 : "w-full pl-5 transition-all duration-300  justify-start"
             } flex items-center gap-4 h-15`}
@@ -84,7 +85,7 @@ export default function SideNav() {
             <button className="cursor-pointer">
               <img src={signout} alt="" />
             </button>
-            {!isCollapsed && (
+            {!collapse && (
               <p className="text-red-500 font-medium text-sm">Logout</p>
             )}
           </div>
@@ -108,7 +109,7 @@ const data = [
     imageActive: eclipseactive,
     imageInactive: eclipseinactive,
     navtext: "Xends",
-    to: "/dashboard/eclipse",
+    to: "/dashboard/activity",
   },
   {
     id: 3,
@@ -129,7 +130,7 @@ const data = [
     imageActive: chartactive,
     imageInactive: chartinactive,
     navtext: "Finance",
-    to: "/dashboard/chart",
+    to: "/dashboard/finance",
   },
   {
     id: 6,

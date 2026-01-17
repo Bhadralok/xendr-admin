@@ -44,7 +44,7 @@ export default function Dashboard() {
         </div>
       </div>
       <div className=" mt-4">
-        <ActivityCard isDropdown={true} icon={activity} />
+        <ActivityCard isDropdown={true} isButton={false} icon={activity} />
       </div>
     </>
   );
