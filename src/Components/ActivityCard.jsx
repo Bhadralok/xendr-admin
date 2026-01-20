@@ -1,12 +1,13 @@
 import live from "../assets/live.svg";
+import ActivityButton from "../UI/ActivityButton";
 import LiveDataButton from "../UI/LiveDataButton";
 import Dropdown from "./Dropdown";
 
 export default function ActivityCard({
-  data,
   isButton = true,
   isDropdown,
   icon,
+  data,
   title = "Xend Activity",
   description = "Showing all Xend activities as they occur real-time",
   hasCounter = false,
@@ -34,7 +35,7 @@ export default function ActivityCard({
               </div>
             )}
           </h1>
-          <p className="text">{description}</p>
+          <p className="text mb-7">{description}</p>
         </div>
         <div className="flex items-center gap-4">
           {isDropdown && <Dropdown />}
@@ -52,7 +53,21 @@ export default function ActivityCard({
       </div>
       <div>
         {data ? (
-          <div></div>
+          <div className="flex flex-col gap-4 h-[37vh] overflow-y-auto">
+            {data?.map((item) => (
+              <ActivityButton
+                key={item.id}
+                name={item.user}
+                isCompleted={item.status === "Completed"}
+                isPending={item.status === "Pending"}
+                inProgress={item.status === "Waiting for Rider"}
+                timeAgo={item.timeAgo}
+                xendID={item.xendId}
+                value={item.progress}
+                progress={item.progress}
+              />
+            ))}
+          </div>
         ) : (
           <div
             className={`${
@@ -70,22 +85,3 @@ export default function ActivityCard({
     </div>
   );
 }
-
-const dropdown = [
-  {
-    id: 1,
-    title: "Today",
-  },
-  {
-    id: 2,
-    title: "This Week",
-  },
-  {
-    id: 3,
-    title: "Months",
-  },
-  {
-    id: 4,
-    title: "Years",
-  },
-];

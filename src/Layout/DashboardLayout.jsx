@@ -12,12 +12,12 @@ export default function DashboardLayout() {
   const { collapsed } = useContext(CollapseContext);
   return (
     <>
-      <div className="flex h-screen ">
+      <div className="flex h-full">
         <SideNav />
         <div
           className={`${
             collapsed ? "w-full" : "w-[88.5vw]"
-          } flex ml-25  flex-col justify-between`}
+          } flex ml-25 flex-col h-full justify-between`}
         >
           <div>
             <TopHeader />

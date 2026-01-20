@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const CollapseContext = createContext();
 
 export function CollapseProvider({ children }) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const toggle = () => setCollapsed(p => !p);
 
   return (

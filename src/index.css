@@ -4,10 +4,14 @@
   --color-primary-grey: #707070;
   --color-secondary-grey: #ababab;
   --color-tertiary-grey: #f8f8f8;
+
   --color-primary-black: #190f00;
 
   --color-primary-orange: #e28400;
   --color-tertiary-orange: #fff2df;
+
+  --color-primary-green: #2db83d;
+  --color-secondary-green: #eafce3;
 }
 .loader {
   animation: spin 1s linear infinite;
