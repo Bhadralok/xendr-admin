@@ -5,7 +5,7 @@ export default function NavButtons({
   isCollapsed = true,
   navtext,
 }) {
-  const base = "h-15 w-15 p-5 rounded-2xl flex items-center transition-all duration-300 cursor-pointer";
+  const base = "h-15 w-15 p-5 rounded-2xl text-sm flex items-center transition-all duration-300 cursor-pointer";
   const active = "bg-primary-orange text-white font-black";
   const inactive = "bg-white text-primary-grey  font-medium";
   const collapsed = "w-full pr-20 pl-5 gap-4";
@@ -18,6 +18,7 @@ export default function NavButtons({
       <img
         src={isActive ? imageActive : imageInactive}
         alt={isActive ? "active" : "inactive"}
+        className="h-5 w-5"
       />
       {!isCollapsed && <p>{navtext}</p>}
     </div>

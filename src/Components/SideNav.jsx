@@ -25,9 +25,9 @@ export default function SideNav() {
   const collapse =
     "h-15 w-15 rounded-2xl flex items-center justify-center cursor-pointer";
   const notCollapsed =
-    "h-15 rounded-2xl flex items-center justify-start cursor-pointer w-full pr-20 pl-5 gap-4 bg-tertiary-orange";
+    "h-15 rounded-2xl flex items-center justify-start cursor-pointer bg-red-400 pr-20 pl-5 gap-4 bg-tertiary-orange";
   return (
-    <div className={collapsed ? "" : "pr-38"}>
+    <div className={collapsed ? "" : "mr-38"}>
       <div className=" fixed w-fit flex flex-col pb-10 justify-between px-5 pt-8 shadow-[0px_10px_50px_0px_rgba(0,0,0,0.05)] h-full">
         <header className="flex flex-col gap-3 ">
           {collapsed ? (

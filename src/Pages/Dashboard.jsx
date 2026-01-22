@@ -7,12 +7,14 @@ import { useContext, useState } from "react";
 import { CollapseContext } from "../Context/CollapsedContext";
 // import ProgressBar from "../UI/ProgressBar";
 import ActivityButton from "../UI/ActivityButton";
+import ActivityCardTable from "../Components/DashboardTable";
+import { DataContext } from "../Context/DataContext";
 
 export default function Dashboard() {
   const { collapsed } = useContext(CollapseContext);
-
+  const { data, deliveryData } = useContext(DataContext);
   return (
-    <div className={`${collapsed ? "w-full" : "w-[84vw]"} `}>
+    <div className={`${collapsed ? "w-full" : "w-[83vw]"}  remove-scrollbar `}>
       <div className="flex h-full gap-4 ">
         <div className=" flex flex-col gap-4">
           <div className="h-62.5 flex gap-4">
@@ -45,68 +47,19 @@ export default function Dashboard() {
             />
           </div>
         </div>
-        <div className="w-[68.8vw]">
-          <ActivityCard icon={paperxend} data={data}/>
+        <div className="w-full">
+          <ActivityCard icon={paperxend} data={data} />
         </div>
       </div>
       <div className=" mt-4">
-        <div className="w-[50vw] flex flex-col gap-4">
-
-        </div>
-        <ActivityCard isDropdown={true} isButton={false} icon={activity} />
+        <div className="w-full flex flex-col gap-4"></div>
+        <ActivityCardTable
+          isDropdown={true}
+          isButton={false}
+          deliveryData={deliveryData}
+          icon={activity}
+        />
       </div>
     </div>
   );
 }
-const data = [
-  {
-    id: "1",
-    user: "Segun",
-    xendId: "2291-10B",
-    timeAgo: "10s ago",
-    progress: 100,
-    status: "Completed",
-    subStatus: "Completed",
-    state: "done", // for coloring
-  },
-  {
-    id: "2",
-    user: "Isaac",
-    xendId: "2291-10B",
-    timeAgo: "15m ago",
-    progress: 20,
-    status: "Pending",
-    subStatus: "Waiting for user to xend",
-    state: "pending",
-  },
-  {
-    id: "3",
-    user: "Ochuko",
-    xendId: "2291-10B",
-    timeAgo: "35m ago",
-    progress: 20,
-    status: "Pending",
-    subStatus: "Waiting for user to xend",
-    state: "pending",
-  },
-  {
-    id: "4",
-    user: "Ochuko",
-    xendId: "2291-10B",
-    timeAgo: "35m ago",
-    progress: 20,
-    status: "Pending",
-    subStatus: "Waiting for user to xend",
-    state: "pending",
-  },
-  {
-    id: "5",
-    user: "Ochuko",
-    xendId: "2291-10B",
-    timeAgo: "35m ago",
-    progress: 20,
-    status: "Completed",
-    subStatus: "Waiting for user to xend",
-    state: "pending",
-  },
-];

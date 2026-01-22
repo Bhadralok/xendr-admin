@@ -2,6 +2,7 @@ import live from "../assets/live.svg";
 import ActivityButton from "../UI/ActivityButton";
 import LiveDataButton from "../UI/LiveDataButton";
 import Dropdown from "./Dropdown";
+// import TableData from "./TableData";
 
 export default function ActivityCard({
   isButton = true,
@@ -18,7 +19,11 @@ export default function ActivityCard({
   textStyle,
   buttonIcon = live,
   bigTitle = false,
+  deliveryData,
 }) {
+  if (deliveryData) {
+    data = "";
+  }
   return (
     <div className="py-8 px-5 shadow-bg h-full rounded-2xl">
       <div className="flex items-center justify-between">

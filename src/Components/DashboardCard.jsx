@@ -9,7 +9,7 @@ export default function DashboardCard({
   return (
     <div>
       {isHorizontal ? (
-        <div className="w-full  flex justify-between items-center shadow-bg py-7.5 px-5 rounded-2xl">
+        <div className="w-full flex justify-between items-center shadow-bg py-7.5 px-5 rounded-2xl">
           <div className="flex flex-col gap-5">
             <p className="text-sm font-medium text-primary-grey">{title}</p>
             <div className="flex gap-1.5 items-end">

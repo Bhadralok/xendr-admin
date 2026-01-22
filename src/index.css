@@ -34,3 +34,10 @@
 .text {
   @apply text-primary-grey font-medium text-sm;
 }
+
+.shrinking {
+  transform: scale(0.1);
+}
+.normaling {
+  transform: scale(1);
+}

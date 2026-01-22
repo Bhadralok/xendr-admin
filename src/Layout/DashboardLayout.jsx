@@ -16,16 +16,16 @@ export default function DashboardLayout() {
         <SideNav />
         <div
           className={`${
-            collapsed ? "w-full" : "w-[88.5vw]"
-          } flex ml-25 flex-col h-full justify-between`}
+            collapsed ? "w-full" : " bg-blue-100"
+          } flex ml-25 flex-col h-full w-full justify-between`}
         >
           <div>
             <TopHeader />
-            <div className="mx-4 mt-4">
+            <div className="mx-3 mt-4 ">
               <Outlet />
             </div>
           </div>
-          <div className="mx-4 mt-4">
+          <div className="mx-3 mt-4">
             <Footer />
           </div>
         </div>
